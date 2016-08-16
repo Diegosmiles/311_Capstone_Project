@@ -19,7 +19,14 @@
 
 ## LINKS:
 
-### 1) web Application: [https://github.com/Diegosmiles/311_Capstone_Project/blob/master/README.md](https://github.com/Diegosmiles/311_Capstone_Project/blob/master/README.md)
+### 1) web Application: [https://http://nk1877.github.io/Capstone/prototype/](https://http://nk1877.github.io/Capstone/prototype/)
+### 2) Technical Paper: https://github.com/Diegosmiles/311_Capstone_Project/blob/master/PAPERS%20AND%20MANUALS/311_technical_report.pdf
+
+### 3) Report for non-technical audiences: https://github.com/Diegosmiles/311_Capstone_Project/blob/master/PAPERS%20AND%20MANUALS/311_sponsor_report.pdf
+
+### 4) Presentation and Overview of the project and findings:
+https://github.com/Diegosmiles/311_Capstone_Project/blob/master/PAPERS%20AND%20MANUALS/Determining%20311%20usage%20levels%20with%20socio%20economic%20and%20spatial%20features.pptx
+
 
 
 
