@@ -1,0 +1,265 @@
+<html>
+    <head>
+        <title>311 Visualization tool</title>
+        <!-- Connecting html with home.css file -->
+        <link href="css/home.css" rel="stylesheet" type="text/css">
+        <!-- Linking bootstrap and cartoDB API-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/3.15/themes/css/cartodb.css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+        <script type="text/javascript" src="http://mbostock.github.com/d3/d3.js"></script>
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script type="text/javascript" src="somefun.js"></script>
+        <link rel="icon" type="image/png" href="./favicon.png">
+        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+        <script type="text/javascript" src="js/charts.js"></script>
+  
+    </head>
+    <body>
+        
+        <!-- Map div contains cartoDB Map -->
+        <div id=map>
+        <!-- Inspector div contains all the options of right side of screen -->
+        <div id=title>311 Visualization</div>
+        <div id=miniinspector>
+            <button id="mbtn" class=button>Full View </button>
+            <button id="rstmap" class=button>Reset Map</button>
+            <script>
+            $( "#mbtn" ).click(function() {
+              $( "#inspector" ).toggle("blind");
+                
+            });
+            </script>
+
+            </div>
+        <div id= inspector>
+            <!-- Adding menu bar -->
+            
+            <nav class="navbar navbar-inverse">
+              <div class="container-fluid">
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>                        
+                  </button>
+                </div>
+                  <!--Naming Menu options -->
+                <div class="collapse navbar-collapse" id="myNavbar">
+                  <ul class="nav navbar-nav">
+                    <li><a href="#" id="main"><span class="glyphicon glyphicon-map-marker"></span> Maps</a></li>
+                    <li><a href="#" id="analytics"><span class="glyphicon glyphicon-stats"></span> Analytics </a></li>
+                    <li><a href="#" id="settings"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
+                    <li><a href="#" id="contact"><span class="glyphicon glyphicon-phone-alt"></span> Contact</a></li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+            <div id=mainc>
+            <!-- Options for first Tab i.e. Maps -->
+             
+                <form role="form" id="boro">
+                    <h3 style="text-align: center">Maps</h3>
+                    <h5><u>Map Selection:</u></h5>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" value="" checked disabled>Brooklyn
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" value="" checked disabled>Bronx
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" value="" checked disabled>Manhattan
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" value="" checked disabled>Queens
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" value="" checked disabled>Staten Island
+                    </label>
+                    <h5><u>Granularity:</u></h5>
+                     <div class="checkbox">
+                      <label><input type="checkbox" value="" checked>Census Tract</label>
+                    </div>
+                    <div class="checkbox">
+                      <label><input type="checkbox" value="">MTA</label>
+                    </div>
+                    </form>
+                    <div id=inspectior2>
+                     <h5><u>Classify by Complaints type:</u></h5>
+                    &nbsp;<label class="radio-inline"> <input id="oneWay" type="radio" checked=True value="oneway" name="group1">&nbsp;Sigle Data Visualization </label>
+                    <label class="radio-inline"><input id="return" type="radio" value="return" name="group1">&nbsp;Compare values</label>
+                    <div id="dropdownchoice">
+                    <div id="dropdown1">
+                      <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Select
+                        <span class="caret"></span></button>
+                        <ul class="dropdown-menu scrollable-menu" role="menu" >
+                          <li class="dropdown-header">Noise</li>
+                          <li><a id="Noise" href="#" class='mapoptions' onclick="dropdownmap()">All</a></li>
+                          <li><a id="Noise - Co" class='mapoptions' href="#" onclick="dropdownmap()">Commercial</a></li> 
+                          <li><a id="nheli" class='mapoptions' href="#" onclick="dropdownmap()">Helicopter</a></li>
+                          <li><a id="nhwor" class='mapoptions' href="#" onclick="dropdownmap()">House of Worship</a></li>
+                          <li><a id="npark" class='mapoptions' href="#">Park</a></li>
+                          <li><a id="nstreet" class='mapoptions' href="#">Street/Sidewalk</a></li>
+                          <li><a id="nveh" class='mapoptions' href="#">Vehicle</a></li>
+                          <li class="divider"></li>
+                          <li class="dropdown-header">Demographics</li>
+                          <li><a href="#">Income</a></li>
+                        </ul>
+                            
+                      </div>
+                    </div>
+                    <div id="dropdown2">
+                      <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Select
+                        <span class="caret"></span></button>
+                        <ul class="dropdown-menu scrollable-menu" role="menu" >
+                          <li class="dropdown-header">Noise</li>
+                          <li><a href="#">All</a></li>
+                          <li><a href="#">Helicopter</a></li>
+                          <li><a href="#">House of Worship</a></li>
+                          <li><a href="#">Park</a></li>
+                          <li><a href="#">Street/Sidewalk</a></li>
+                          <li><a href="#">Vehicle</a></li>
+                          <li class="divider"></li>
+                          <li class="dropdown-header">Demographics</li>
+                          <li><a href="#">About Us</a></li>
+                        </ul>
+                            
+                      </div>
+                    </div>
+                    </div>
+                        <input id="multipleradio" type="radio" name="muliple" value="multiple" > Multiple Selection
+                        <input id="singleradio" type="radio" name="muliple" value="multiple" checked="checked" > Single Selection<br>
+                        <input id="sszoom" type="checkbox"> Zoom Off/On
+                        <p>
+                      <label for="amount">Year range:</label>
+                      <input type="text" id="amount" readonly style="border:0; color:black; font-weight:bold; margin-top:10">
+                    </p>
+
+                    <div id="slider-range"></div>
+                        </div>
+                <script>
+                    
+                var k = "Noise"
+                function dropdownmap(){
+                    $('.mapoptions').click(function(){
+                      
+                       k= (this.id);
+                        
+                        
+                    });
+                };
+               
+                </script>
+                
+             <script>
+              $(function() {
+                $( "#slider-range" ).slider({
+                  disabled:true,
+                  range: true,
+                  min: 2009,
+                  max: 2015,
+                  values: [ 2014, 2015 ],
+                  slide: function( event, ui ) {
+                    $( "#amount" ).val( ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+                  }
+                });
+                $( "#amount" ).val( "" + $( "#slider-range" ).slider( "values", 0 ) +
+                  " - " + $( "#slider-range" ).slider( "values", 1 ) );
+              });
+  </script>
+
+ 
+
+            </div>
+            <div id="analyticsc"><h3 style="text-align: center ">Analytics</h3>
+                <div id="charts">
+                    <p id="mi1">Median Income: <svg id="svg"></svg></p><h6 id="mi"></h6>
+                    <p id="mag1">Median Age:<svg id="svg1"></svg></p><h6 id="mag"></h6>
+                    <p id="tca1">Total Calls:<svg id="svg2" ></svg></p><h6 id="tca"></h6>
+                    <p id="medhh1">Median Households: <svg id="svg3"></svg></p><h6 id="medhh"></h6>
+    
+                <script>
+                     //init("svg1","barchart");
+                    init("svg","barchart");
+                    init("svg1","barchart1");
+                    init("svg2","barchart2");
+                    init("svg3","barchart3");
+                    </script>
+                </div>
+            </div>
+            <div id="settingsc">
+                <h3 style="text-align: center ">Settings</h3>
+                <input id="doubleclick" type="checkbox" > Double Click Zoom &nbsp;&nbsp;&nbsp;&nbsp;
+                <input id="dragclick" type="checkbox" > Dragable Map 
+                <h5><u>Accessibility Options</u> </h5>
+                <h5>Background Map Layer:</h5>
+                <input type="radio" class="layerselection" id="bnw" name="layersel"> &nbsp;black n white
+                <input type="radio" class="layerselection" id="streete" name="layersel">&nbsp;Street  
+                <input type="radio" class="layerselection" id="light" name="layersel">&nbsp;Light-All  
+                <input type="radio" class="layerselection" id="black" name="layersel" checked>&nbsp; Black (Default)
+                <h5>Text Size:</h5>
+                <label style="font: normal 25px courier !important;"><input type="radio" name="size"> A&nbsp;</label>
+                <label style="font: normal 20px courier !important"><input type="radio" name="size">&nbsp; A&nbsp;</label>
+                <label ><input type="radio" name="size">&nbsp; A</label>&nbsp;(Default) <br>
+                <input type="checkbox" checked> Transparency
+            </div>
+            <div id="contactc">
+                <div id="talkhere">
+                <h3 style="text-align: center">Contact</h3>
+                <form role="form" id="contactform">
+                  <div id="letstalkfield">
+                  <div id="frommain">
+                    <input type="text" class="form-control" id="usr" placeholder="Name">
+                </div>
+                <div id="tomain">
+                    <input type="text" class="form-control" id="usr" placeholder="Email Address">
+                </div>
+                  </div>
+                  <br><br>
+                  
+                    <div class="form-group">
+
+                 <textarea class="form-control" rows="10" id="comment" placeholder="Please type here."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                  </form>
+
+                </div>
+            
+            </div>
+                
+            <script>
+                function navi(link,div2){
+                    
+                $( "#"+link ).on("click",function() {
+                 $("#analyticsc").hide();
+                    $("#settingsc").hide();
+                    $("#mainc").hide();
+                    $("#contactc").hide()
+                    $("#"+div2).show();
+                    $("#"+div2).css("display","block");
+                    
+                });
+                };
+                navi('analytics','analyticsc');
+                navi('settings','settingsc');
+                navi('main','mainc');
+                navi('contact','contactc');
+            </script>
+                
+            
+        </div>
+        </div>
+        
+    
+    <script src="http://libs.cartocdn.com/cartodb.js/v3/3.15/cartodb.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    
+
+    <script type="text/javascript" src="js/analytics.js"></script>
+   
+    </body>
+</html>
