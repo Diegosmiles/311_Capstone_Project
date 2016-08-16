@@ -304,6 +304,70 @@ pysal
 
 ## Web Application Instruction
 
-Access to the Web Application: nk1877.github.io/Capstone/prototype
+####Access to the Web Application: nk1877.github.io/Capstone/prototype
 
+The Web Tool is currently at its beta stage. Most features of the tool has been developed
 
+and are functional. Web tool has two main sections: map section and the Inspector section. Both,
+
+map and inspector sections, are designed to provide intuitive user experience for navigating
+
+information. Map provides a natural user experience where user can select the location (Census
+
+Tract or NTA) for which information is required. The user has option to select one or many
+
+locations for exploring or comparing information respectively. Map section has following features:
+
+● Information box: Information box provides quick information about the location when
+
+mouse is hovered over like the type of service request and its frequency, selected location
+
+information etc.
+
+● Map control Settings: It consists of two buttons full view and reset map. Full view gives
+
+flexibility to see the map in full view screen by removing the inspector tab. Similarly reset
+
+map provides flexibility to reset map to its original shape and size in case it is changed
+
+during data browsing process.
+
+The Inspector section is divided into 4 section for providing necessary browsing options
+
+and flexibility to choose the information.
+
+● Options Tab: It provides various option to adjust map. Tab provides flexibility to select
+
+level of granularity like NTA or census tract. This section provides option to visualize 180
+
+service request types and 68 demographic features. This tab also provides flexibility to
+
+visualize working and residential population. Other important features are option to zoom
+
+certain census tract, option to choose single or multiple census tract, option to change
+
+background layer, adjust transparency of inspector tab and freedom to choose
+
+normalization variable as raw, population and area.
+
+● Data Tab: This tab provides top 20 service requests and some demographic information
+
+about the chosen the location. Demographic information includes ratio of renter vs owner
+
+of the property, age classification, per capita income, median age, etc.
+
+● Model Tab: Model tab is designed to predict type of request people of certain demographic
+
+attributes are likely to make. This tab allows users to build hypothetical personalities where
+
+they provide information like age, income, if they own or rent the property, household type,
+
+preferable transportation mode, intensity etc. Application would use our model to predict
+
+which service request most likely their chosen personality would like to make. This helps
+
+in understanding the propensity of making requests by different groups of people.
+
+● Team Tab: Team tab provides information about the team and role of each member in the
+
+project. It also contains mentor and sponsor agency information.
