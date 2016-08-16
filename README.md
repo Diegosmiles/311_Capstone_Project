@@ -1,7 +1,7 @@
 
 # Determining 311 usage levels with socio-economic and spatial features
 
-# Capstone Project for the Center of Urban Science and Progress at New York University in Collaboration with NYC 311
+### Capstone Project for the Center of Urban Science and Progress at New York University in Collaboration with NYC 311
 
 ## Contributors:
 
@@ -17,7 +17,9 @@
 
 ###Stanislav Sobolevsky, PhD. (http://cusp.nyu.edu/people/stanislav-sobolevsky/)
 
+## LINKS:
 
+### 1) web Application: [https://github.com/Diegosmiles/311_Capstone_Project/blob/master/README.md](https://github.com/Diegosmiles/311_Capstone_Project/blob/master/README.md)
 
 
 
