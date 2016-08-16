@@ -23,6 +23,7 @@
 
 # About our project:
 
+
 311 is the defined support center created by the New York City government with the objective of
 attending all nonemergency
 inquiries and service requests from the general public to the local
@@ -31,10 +32,12 @@ all received citizen complaints regarding topics that range from housing, noise 
 to public health and services related to various local government departments, among many
 others.
 
+
 The main objective of our project is to generate an analytical model that can link several data sources containing
 socioeconomic and demographic features of the population that resides within New York City and
 asses their correlations with the number of service requests received by 311 in a specific period of
 time to identify certain kinds of user profiles at defined geographical areas.
+
 
 The expectation is that the model developed is not only limited to define these correlations, but
 that can be a useful tool to also try to generate projections and estimations on the propensity and
@@ -43,54 +46,92 @@ features, in a way to both identify population changes in the City, and also to 
 demographic groups are being unattended or have lower probabilities of using the service in order
 to guarantee a global reach of the service provided.
 
+
 # Why this repo exists
+
 
 This is the repo for our Machine Learning final group project at CUSP, NYU. It serves as a platform of code version control, code exchange, 
 code safehouse and reproducibility.
 
-
-311 Socio-Economic Pattern project
- 
-
-#####
-2. DATASETS
+DATASETS
 
 Multiple data sources have been used throughout the project. Data sources used includes:
+
+
  311 Service Request Data (2014) (open source)
+
+
  ACS Demographics Data (2014) (open source)
+
+
  LEHD Data (open Source) (2014)
+
+
 pluto data shape file for census tract
+
+
 pluto Data shapefile NTA level (neighborhood level) (version 16v1)
 
-########
 3. VARIABLES FOR THE ANALYSIS:
+
 
 Demographic Variables:
 
+
 Age groups: population under 18, between 18 and 34, between 35 and 64, more than 65.
+
+
 Population by Race: white, black, hispanic, asian, others
+
+
 Family Households and non family households
+
+
 Education Level: high school or less, bachelors, masters, PhDs
+
+
 Owner and tenants
+
+
 Mean of transportation: car, public, motorcycle, others
+
+
 Household income: less than 40,000; between 40,000 and 75,000; and 75,000 and above
+
+
 House value: less than 100,000; from 100,000 to 500,000; 500,000 and more.
+
+
 
 Local Variables:
 
 Median House Value, median age, median rent, median income, normalized cars, building density, percentage of commercial area, percentage of retail area, percentage of residential area, inbound commute density, population density, percentage of tenant population. 
+
+
  
 4. FILES
 
+
+
 The main repository of the project contains 2 folders (datasets and Outputs) and three ipython notebooks (LEHD_data_aggregation, Step 1 and Step 2)  where the calculations were performed. 
+
+
 
 The folder datasets, contains all the data aggregations that are used in the calculations, and in the webtool, for the analysis and visualization of the results.
 
+
 Datasets used in LEHD_data_aggregation:
 
+
 'datasets/ny_od_main_JT00_2014.csv' from LEHD data, containing origin and destination census blocks for workers living inside New York State
+
+
 'datasets/ny_od_aux_JT00_2014.csv' from LEHD data, containing origin and destination census blocks for workers living outside New York State
+
+
 datasets/demographics_CT_NYC_residents.csv a compiled Data Frame with the selected demographic variables downloaded from 2014 American Community Survey for census tracts inside New York State
+
+
 datasets/demographics_CT_outNY.csv  a compiled Data Frame with the selected demographic variables downloaded from 2014 American Community Survey for census tracts outside New York State
 
 
