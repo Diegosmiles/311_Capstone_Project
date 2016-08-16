@@ -47,13 +47,13 @@ demographic groups are being unattended or have lower probabilities of using the
 to guarantee a global reach of the service provided.
 
 
-# Why this repo exists
+### Why this repo exists
 
 
 This is the repo for our Machine Learning final group project at CUSP, NYU. It serves as a platform of code version control, code exchange, 
 code safehouse and reproducibility.
 
-DATASETS
+##DATASETS
 
 Multiple data sources have been used throughout the project. Data sources used includes:
 
@@ -72,7 +72,7 @@ pluto data shape file for census tract
 
 pluto Data shapefile NTA level (neighborhood level) (version 16v1)
 
-3. VARIABLES FOR THE ANALYSIS:
+## VARIABLES FOR THE ANALYSIS:
 
 
 Demographic Variables:
@@ -109,7 +109,7 @@ Median House Value, median age, median rent, median income, normalized cars, bui
 
 
  
-4. FILES
+## FILES
 
 
 
