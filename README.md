@@ -19,7 +19,7 @@
 
 ## LINKS:
 
-### 1) web Application: [https://http://nk1877.github.io/Capstone/prototype/](https://http://nk1877.github.io/Capstone/prototype/)
+### 1) web Application: [http://nk1877.github.io/Capstone/prototype/](http://nk1877.github.io/Capstone/prototype/)
 ### 2) Technical Paper: https://github.com/Diegosmiles/311_Capstone_Project/blob/master/PAPERS%20AND%20MANUALS/311_technical_report.pdf
 
 ### 3) Report for non-technical audiences: https://github.com/Diegosmiles/311_Capstone_Project/blob/master/PAPERS%20AND%20MANUALS/311_sponsor_report.pdf
